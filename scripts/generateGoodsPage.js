@@ -67,6 +67,7 @@ export default function generateGoodsPage() {
         const search = decodeURI(location.search);
         const prop = search.split('=')[0].substring(1);
         const value = search.split('=')[1];
+        const title = document.querySelector('title');
 
         if (prop === 's') {
             getData.search(value, generateCards);
@@ -74,11 +75,13 @@ export default function generateGoodsPage() {
 
         } else if (prop === 'wishlist') {
             getData.wishList(userData.wishList, generateCards);
-            mainHeader.textContent = `Список желаний:`;
+            mainHeader.textContent = `Список желаний:`;           
+            title.textContent = 'Список желайний - IKEA';
 
         } else if (prop === 'cat' || prop === 'subcat') {
             getData.category(prop, value, generateCards);
             mainHeader.textContent = value;
+            title.textContent = `${value} - IKEA`;
         }
     }
 

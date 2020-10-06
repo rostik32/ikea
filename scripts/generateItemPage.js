@@ -16,6 +16,9 @@ export default function generateItemPage() {
         const goodItemPriceValue = document.querySelector('.good-item__price-value');
         const btnGood = document.querySelector('.btn-good');
         const btnAddWishlist = document.querySelector('.btn-add-wishlist');
+        const title = document.querySelector('title');
+
+        title.textContent = `${itemName} - IKEA`;
 
         breadcrumbLink[0].textContent = category;
         breadcrumbLink[0].href = `goods.html?cat=${category}`;
